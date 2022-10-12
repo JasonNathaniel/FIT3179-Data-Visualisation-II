@@ -1,0 +1,82 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "title": "Crash accident in Metro Melbourne (2015-2018)",
+    "width": 800,
+    "height": 600,
+    "params": [
+        {
+            "name": "zoom_level",
+            "value": 30000,
+            "bind": {
+                "input": "range",
+                "min": 3500,
+                "max": 60000,
+                "step": 100,
+                "name": "Zoom: "
+            }
+        },
+        {
+            "name": "center_to",
+            "value": [
+                144.9,
+                -38
+            ]
+        }
+    ],
+    "projection": {
+        "type": "equirectangular",
+        "center": {
+            "expr": "center_to"
+        },
+        "scale": {
+            "expr": "zoom_level"
+        }
+    },
+    "data": {
+        "url": "https://raw.githubusercontent.com/JasonNathaniel/FIT3179-Data-Visualisation-II/main/js/output2.json",
+        "format": {
+            "type": "topojson",
+            "feature": "vic_lga"
+        }
+    },
+    "transform": [
+        {
+            "lookup": "properties.LGA_NAME",
+            "from": {
+                "data": {
+                    "url": "https://raw.githubusercontent.com/JasonNathaniel/FIT3179-Data-Visualisation-II/main/data/Crash_Council_Victoria.csv"
+                },
+                "key": "LGA_NAME",
+                "fields": [
+                    "0"
+                ]
+            }
+        }
+    ],
+    "mark": {
+        "type": "geoshape"
+    },
+    "encoding": {
+        "color": {
+            "field": "0",
+            "type": "quantitative",
+            "scale": {
+                "type": "log"
+            },
+            "title": "Accidents"
+        },
+        "tooltip": [
+            {
+                "field": "properties.LGA_NAME",
+                "type": "nominal",
+                "title": "LGA Name"
+            },
+            {
+                "field": "0",
+                "type": "quantitative",
+                "title": "No of accidents",
+                "format": ","
+            }
+        ]
+    }
+}

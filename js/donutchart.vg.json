@@ -1,0 +1,72 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "width": 200,
+    "height": 300,
+    "title": "Accident Severity Proportion",
+    "data": {
+        "values": [
+            {
+                "Severity": "Fatal",
+                "value": 443,
+                "percentage": "1.19%"
+            },
+            {
+                "Severity": "Serious injury",
+                "value": 9552,
+                "percentage": "25.77%"
+            },
+            {
+                "Severity": "Other injury",
+                "value": 27072,
+                "percentage": "73.03%"
+            }
+        ]
+    },
+    "config": {
+        "view": {
+            "stroke": "transparent"
+        }
+    },
+    "encoding": {
+        "theta": {
+            "field": "value",
+            "type": "quantitative",
+            "stack": "normalize"
+        },
+        "color": {
+            "field": "Severity",
+            "type": "nominal",
+            "legend": null
+        },
+        "tooltip": [
+            {
+                "field": "Severity",
+                "type": "nominal"
+            },
+            {
+                "field": "percentage",
+                "title": "Value"
+            }
+        ]
+    },
+    "layer": [
+        {
+            "mark": {
+                "type": "arc",
+                "outerRadius": 80
+            }
+        },
+        {
+            "mark": {
+                "type": "text",
+                "radius": 120
+            },
+            "encoding": {
+                "text": {
+                    "field": "Severity",
+                    "type": "nominal"
+                }
+            }
+        }
+    ]
+}

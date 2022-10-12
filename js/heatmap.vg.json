@@ -1,0 +1,72 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "width": 200,
+    "height": 300,
+    "title": "Accident by hour",
+    "data": {
+        "url": "https://raw.githubusercontent.com/JasonNathaniel/FIT3179-Data-Visualisation-II/main/data/Crash_Stats_Vic2.csv"
+    },
+    "mark": "rect",
+    "encoding": {
+        "x": {
+            "field": "YEAR",
+            "type": "ordinal",
+            "title": "Year"
+        },
+        "y": {
+            "field": "HOUR",
+            "type": "ordinal",
+            "title": "Hour",
+            "sort": [
+                "0",
+                "1",
+                "2",
+                "3",
+                "4",
+                "5",
+                "6",
+                "7",
+                "8",
+                "9",
+                "10",
+                "11",
+                "12",
+                "13",
+                "14",
+                "15",
+                "16",
+                "17",
+                "18",
+                "19",
+                "20",
+                "21",
+                "22",
+                "23"
+            ]
+        },
+        "color": {
+            "aggregate": "count",
+            "field": "HOUR",
+            "type": "quantitative",
+            "title": "Accidents"
+        },
+        "tooltip": [
+            {
+                "field": "HOUR",
+                "type": "quantitative",
+                "title": "Hour"
+            },
+            {
+                "field": "YEAR",
+                "type": "ordinal",
+                "title": "Year"
+            },
+            {
+                "aggregate": "count",
+                "field": "HOUR",
+                "type": "quantitative",
+                "title": "No of accidents"
+            }
+        ]
+    }
+}

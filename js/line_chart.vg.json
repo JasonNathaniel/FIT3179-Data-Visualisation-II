@@ -1,0 +1,68 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "width": 550,
+    "height": 250,
+    "title": "Montly number of crash in Metro Melbourne (2015-2018)",
+    "config": {
+        "legend": {
+            "orient": "bottom",
+            "layout": {
+                "bottom": {
+                    "anchor": "middle"
+                }
+            }
+        }
+    },
+    "data": {
+        "url": "https://raw.githubusercontent.com/JasonNath/FIT3179-Homework-Week-9/main/data/Crash_Stats_Vic.csv"
+    },
+    "mark": {
+        "type": "line",
+        "point": true
+    },
+    "encoding": {
+        "x": {
+            "field": "MONTH",
+            "type": "temporal",
+            "timeUnit": "month",
+            "title": "Month"
+        },
+        "y": {
+            "aggregate": "count",
+            "field": "ACCIDENT_NO",
+            "type": "quantitative",
+            "scale": {
+                "domain": [
+                    500,
+                    1000
+                ]
+            }
+        },
+        "color": {
+            "field": "YEAR",
+            "timeUnit": "year",
+            "type": "nominal",
+            "title": null
+        },
+        "tooltip": [
+            {
+                "field": "MONTH",
+                "type": "temporal",
+                "timeUnit": "month",
+                "title": "Month"
+            },
+            {
+                "field": "YEAR",
+                "type": "temporal",
+                "timeUnit": "year",
+                "title": "Year"
+            },
+            {
+                "aggregate": "count",
+                "field": "ACCIDENT_NO",
+                "type": "quantitative",
+                "title": "No of accidents"
+            }
+        ]
+    }
+}

@@ -1,0 +1,91 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "title": "Accident type distribution",
+    "width": 200,
+    "height": 200,
+    "data": {
+        "url": "https://raw.githubusercontent.com/JasonNath/FIT3179-Homework-Week-9/main/data/Crash_Stats_Vic.csv"
+    },
+    "transform": [
+        {
+            "filter": "datum.YEAR == Year_selection || Year_selection == null"
+        }
+    ],
+    "params": [
+        {
+            "name": "Year_selection",
+            "bind": {
+                "input": "select",
+                "options": [
+                    null,
+                    2015,
+                    2016,
+                    2017,
+                    2018
+                ],
+                "labels": [
+                    "Show all",
+                    "2015",
+                    "2016",
+                    "2017",
+                    "2018"
+                ],
+                "name": "Year:  "
+            }
+        }
+    ],
+    "mark": "bar",
+    "encoding": {
+        "x": {
+            "field": "ACCIDENT_TYPE",
+            "type": "ordinal",
+            "title": "Accident type",
+            "axis": {
+                "labelAngle": -64
+            },
+            "sort": "-y"
+        },
+        "y": {
+            "aggregate": "count",
+            "field": "ACCIDENT_TYPE"
+        },
+        "tooltip": [
+            {
+                "field": "ACCIDENT_TYPE",
+                "type": "ordinal",
+                "title": "Severity"
+            },
+            {
+                "field": "ACCIDENT_TYPE",
+                "aggregate": "count",
+                "type": "quantitative",
+                "title": "Number of accidents",
+                "format": ","
+            }
+        ]
+    },
+    "layer": [
+        {
+            "mark": "bar"
+        },
+        {
+            "mark": {
+                "type": "text",
+                "baseline": "middle",
+                "dy": -5,
+                "fontSize": 8,
+                "fontStyle": "italic"
+            },
+            "encoding": {
+                "text": {
+                    "field": "ACCIDENT_TYPE",
+                    "aggregate": "count",
+                    "type": "quantitative"
+                },
+                "color": {
+                    "value": "black"
+                }
+            }
+        }
+    ]
+}
