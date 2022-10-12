@@ -1,0 +1,102 @@
+#symbol_map {
+    left: 100px;
+    right: 100px;
+    /*height: 1000px;
+	width: 800px;*/
+}
+
+.pure-u-1-1 {
+    margin-top: 30px;
+}
+
+.pure-u-1 {
+    margin-left: 100px;
+    margin-right: 100px;
+}
+
+
+.pure-u-1-3 {
+    width: 30vw;
+}
+
+.pure-u-1-2 {
+    width: 70vw;
+}
+
+.page {
+    width: 1024px;
+    margin: auto;
+    padding: 30px;
+}
+
+.column {
+    float: left;
+    width: 50%;
+}
+
+/* Clear floats after the columns */
+.row:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+h1 {
+    text-align: center;
+    font-size: 40px;
+}
+
+h2 {
+    text-align: center;
+    font-size: 25px;
+    padding: 10px;
+    background-color: #C7E4EE;
+    margin-left: 20px;
+}
+
+p {
+    text-align: center;
+    padding-left: 30px;
+    padding-right: 30px;
+}
+
+.columns {
+    margin-top: 20px;
+    margin-bottom: 20px;
+    display: flex;
+    width: 100%;
+}
+
+.column3 {
+    width: 33%;
+    height: 400px;
+    padding-left: 30px;
+    padding-right: 30px;
+}
+
+.column3desc {
+    width: 33%;
+    height: 100px;
+}
+
+.column2 {
+    margin-top: 10px;
+    margin-right: 15px;
+    margin-left: 15px;
+    padding-left: 30px;
+    padding-right: 30px;
+}
+
+#barchart {
+    width: 90%;
+}
+
+#symbol_lab {
+    width: 90%;
+    margin: auto;
+}
+
+hr {
+    border: 0;
+    border-top: 1px solid black;
+}
