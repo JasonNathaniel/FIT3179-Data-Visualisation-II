@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <!-- Import Vega & Vega-Lite (does not have to be from CDN) -->
+    <script src="https://cdn.jsdelivr.net/npm/vega@5.20.2"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vega-lite@5.1.0"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vega-embed@6.17.0"></script>
+
+
+    <!-- CSS file -->
+    <link rel="stylesheet" type="text/css" href="css/styles.css" media="all">
+
+</head>
+
+<body>
+
+    <div class="page">
+
+        <h1>Victoria Crash Statistics</h1>
+
+        <hr>
+
+        <div>
+            <h2>Accident Across Metropolitan Melbourne</h2>
+        </div>
+
+        <div class="pure-u-1-1">
+            <div id="symbol_map"></div>
+        </div>
+
+        <div class="pure-u-1">
+            <p>The map shows the number of crashes that happen in each Melbourne's metropolitan Local Government Area
+                from 2015
+                until 2018.
+                <br>
+                <br>
+                Typically, the number of accident correspond to the size of the LGA. Highest number of crash
+                accident
+                happend in Melbourne City and the lowest in Nillumbik Shire.
+            </p>
+        </div>
+
+        <hr>
+
+        <div class="columns">
+            <div class="columnn2">
+                <div id="linechart"></div>
+            </div>
+
+            <div class="columnn2">
+                <h2>Accident Throughout The Years</h2>
+                <p>There tends to be a downtrend in the start and the end of the year. The number of crash
+                    has been decreasing in recent years.
+                </p>
+            </div>
+        </div>
+
+        <hr>
+
+        <div>
+            <h2>Accident Information</h2>
+        </div>
+
+
+        <div class="columns">
+            <div class="column3">
+                <div id="barchart"></div>
+            </div>
+
+            <div class="column3">
+                <div id="heatmap"></div>
+            </div>
+
+            <div class="column3">
+                <div id="piechart"></div>
+            </div>
+        </div>
+
+        <div class="columns">
+            <div class="column3desc">
+                <p>Collision with vehicle has been the highest accident type on every year with more than 5 times
+                    compared to collision with a fixed object.</p>
+            </div>
+
+
+            <div class="column3desc">
+                <p> Accident happend more frequently in the daytime especially in the late afternoon. Late evening has
+                    more accidents compared to after midnight.</p>
+            </div>
+
+
+            <div class="column3desc">
+                <p>Most of the accident did not result in fatal or serious injury.</p>
+            </div>
+
+        </div>
+
+        <hr>
+
+        <p>Visualisation by Jason Nathaniel Setiawan</p>
+
+
+
+    </div>
+
+
+    <script type="text/javascript">
+
+        var spec1 = "js/trialnumber2.vg.json";
+        vegaEmbed('#symbol_map', spec1, { "actions": false }).then(function (result) {
+            // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
+        }).catch(console.error);
+    </script>
+
+    <script type="text/javascript">
+
+        var spec2 = "js/line_chart.vg.json";
+        vegaEmbed('#linechart', spec2, { "actions": false }).then(function (result) {
+            // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
+        }).catch(console.error);
+    </script>
+
+
+    <script type="text/javascript">
+
+        var spec3 = "js/barchart.vg.json";
+        vegaEmbed('#barchart', spec3, { "actions": false }).then(function (result) {
+            // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
+        }).catch(console.error);
+    </script>
+
+    <script type="text/javascript">
+
+        var spec4 = "js/heatmap.vg.json";
+        vegaEmbed('#heatmap', spec4, { "actions": false }).then(function (result) {
+            // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
+        }).catch(console.error);
+    </script>
+
+    <script type="text/javascript">
+
+        var spec5 = "js/donutchart.vg.json";
+        vegaEmbed('#piechart', spec5, { "actions": false }).then(function (result) {
+            // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
+        }).catch(console.error);
+    </script>
+
+
+</body>
+
+</html>
