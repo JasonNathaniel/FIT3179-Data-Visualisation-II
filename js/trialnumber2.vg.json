@@ -20,7 +20,30 @@
             "value": [
                 144.9,
                 -38
-            ]
+            ],
+            "bind": {
+                "input": "select",
+                "options": [
+                    [
+                        145,
+                        -37.95
+                    ],
+                    [
+                        145.29,
+                        -38.1
+                    ],
+                    [
+                        145.27,
+                        -37.59
+                    ]
+                ],
+                "labels": [
+                    "Melbourne CBD",
+                    "Casey City",
+                    "Nillumbik Shire"
+                ],
+                "name": "Map Centre: "
+            }
         }
     ],
     "projection": {
@@ -54,7 +77,8 @@
         }
     ],
     "mark": {
-        "type": "geoshape"
+        "type": "geoshape",
+        "stroke": "white"
     },
     "encoding": {
         "color": {

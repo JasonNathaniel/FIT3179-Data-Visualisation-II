@@ -53,7 +53,8 @@
         {
             "mark": {
                 "type": "arc",
-                "outerRadius": 80
+                "outerRadius": 80,
+                "innerRadius": 50
             }
         },
         {
